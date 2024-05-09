@@ -2,10 +2,10 @@ const express = require ('express')
 const serve = express()
 const produtos = require ("./src/data/produtos.json")
 
-serve.get('/loja' , (req,res) =>{
+serve.get('/' , (req,res) =>{
     return res.json(produtos)
 })
 
-serve.listen(3000, ()=>{
+serve.listen(process.env.PORT || 3000, ()=>{
     console.log('servidor estar funcionando')
 })
